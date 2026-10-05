@@ -1,0 +1,45 @@
+# Secrets - NEVER commit
+.env
+*.env
+!.env.example
+**/secret*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
+
+# Databases (regenerated from the synthetic CSVs - see scripts/init_database.py)
+backend/threat_intel.db
+backend/threat_intel.db-wal
+backend/threat_intel.db-shm
+*.sqlite
+*.sqlite3
+*.db
+
+# Node / build artefacts (not used, kept for safety)
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# Evidence work directory (temp renders)
+screenshots/_tmp/

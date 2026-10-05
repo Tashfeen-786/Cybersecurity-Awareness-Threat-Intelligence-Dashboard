@@ -1,0 +1,460 @@
+[
+  {
+    "module_id": "phishing-awareness",
+    "title": "Phishing Awareness",
+    "category": "Phishing",
+    "summary": "Learn to recognize fake emails, links and login pages that try to steal credentials or deliver malware.",
+    "reading_minutes": 5,
+    "what_is_it": "Phishing is a social-engineering attack where an attacker impersonates a trusted person or organization (a bank, your IT helpdesk, a delivery service) to trick you into revealing credentials, opening a malicious attachment, clicking a dangerous link, or making a payment. It usually arrives by email, but also happens over SMS ('smishing'), phone calls ('vishing') and chat apps.",
+    "why_it_matters": "Phishing is one of the most common ways real intrusions begin. A single clicked link or submitted password can lead to account takeover, ransomware deployment, or theft of sensitive data. Defensive technology filters a lot of phishing, but some messages always reach humans - so the human is a critical line of defense.",
+    "warning_signs": [
+      "Suspicious sender: the display name says 'IT Support' but the address is something like helpdesk-team@mail.invalid (safe fictional example).",
+      "Urgency and pressure: 'Your account will be DEACTIVATED within 24 hours' is designed to make you act before you think.",
+      "Credential requests: no legitimate service emails you asking to 'confirm your password' by entering it on a page.",
+      "Unexpected attachments: invoices, shipping notices or 'secure documents' (.zip, .html, macro-enabled office files) you did not expect.",
+      "Suspicious links: hover first - the text may say 'https://portal.example.com' while the real target is 'http://portal-verify.example.net/login' (safe fictional example).",
+      "Payment requests: sudden bank-detail changes, gift-card requests or 'urgent' wire transfers, especially from executives.",
+      "Impersonation of colleagues or brands: slightly wrong logos, generic greetings ('Dear Customer'), or a lookalike domain with one character different.",
+      "Unexpected QR codes: a QR code ('quishing') hides the real URL from your eyes - never scan codes from unexpected emails."
+    ],
+    "safe_practices": [
+      "Slow down: urgency is the attacker's tool. Any message that demands immediate action deserves extra suspicion.",
+      "Verify through an independent channel: look up the official website or phone number yourself; do not use the contact details inside the suspicious message.",
+      "Hover over links before clicking and read the full domain carefully.",
+      "Never enter credentials on a page you reached from an email or chat message - navigate to the service manually.",
+      "Keep software updated so known vulnerabilities in browsers, office suites and mail clients are patched.",
+      "Report suspected phishing using your organization's reporting process (button, alias or helpdesk) instead of deleting silently."
+    ],
+    "if_it_happens": [
+      "Do not panic and do not interact further with the message.",
+      "If you clicked a link but entered nothing: close the page and report it.",
+      "If you entered credentials: change that password immediately everywhere it was used, then enable/verify MFA, and report it.",
+      "If you opened an attachment: disconnect from the network if instructed by policy, do not power off, and contact IT/security immediately.",
+      "Keep the original message (for headers/evidence) unless your reporting process says otherwise."
+    ]
+  },
+  {
+    "module_id": "password-security",
+    "title": "Password Security",
+    "category": "Passwords",
+    "summary": "Unique, long passwords and a password manager - the foundation of account safety.",
+    "reading_minutes": 4,
+    "what_is_it": "Password security is the practice of creating, storing and using credentials so they resist guessing, cracking and theft. Modern best practice favors LONG unique passphrases (three or more random words), a password manager, and a different password for every account.",
+    "why_it_matters": "Attackers buy lists of billions of leaked credentials and replay them against login pages ('credential stuffing'). If you reuse one password, a breach of an unrelated site can unlock your email, bank or work accounts. Your email account is the master key for password resets, so protecting it protects everything.",
+    "warning_signs": [
+      "You use the same password on more than one site or service.",
+      "Your passwords are short (under ~12 characters) or use predictable patterns (Password123!, Summer2026!).",
+      "You keep passwords on sticky notes, spreadsheets or plain text files.",
+      "A service you use announces a breach, or a password manager or breach-alert service warns you.",
+      "You receive sign-in alerts from locations or devices you do not recognize."
+    ],
+    "safe_practices": [
+      "Use a reputable password manager to generate and store unique passwords - you only need to remember one strong master passphrase.",
+      "Prefer long passphrases: 'correct-horse-battery-staple' style strings are strong AND memorable.",
+      "Never reuse passwords across accounts, especially between work and personal services.",
+      "Turn on MFA wherever it is offered (see the MFA module).",
+      "Change a password immediately after a breach notification or suspected compromise - not on an arbitrary schedule.",
+      "Never share passwords with anyone, including people claiming to be IT staff; legitimate support never needs your password."
+    ],
+    "if_it_happens": [
+      "If you suspect a password was exposed: change it NOW, starting with your email account.",
+      "Check whether that password was reused anywhere and change those accounts too.",
+      "Review active sessions and sign-out everywhere on affected services.",
+      "Enable MFA if it was not already on.",
+      "Report the incident through your organization's process so others can be protected."
+    ]
+  },
+  {
+    "module_id": "multi-factor-authentication",
+    "title": "Multi-Factor Authentication (MFA)",
+    "category": "MFA",
+    "summary": "Something you know + something you have + something you are - why MFA beats passwords alone.",
+    "reading_minutes": 4,
+    "what_is_it": "MFA (also called two-factor authentication, 2FA) requires a second proof of identity in addition to your password: something you have (an authenticator app, a security key, a smartcard) or something you are (fingerprint, face). Even if your password is stolen, an attacker usually cannot log in without the second factor.",
+    "why_it_matters": "Strong password + MFA is generally far safer than a password alone. Analysis of real-world account takeovers consistently shows that most compromised accounts had MFA disabled. MFA also buys you time: you get a sign-in prompt you did not trigger - an early warning that your password is known to someone else.",
+    "warning_signs": [
+      "MFA prompts ('push' notifications) arrive when you are not logging in - that means someone has your password and is hoping you approve by reflex.",
+      "Someone contacts you asking you to 'approve the prompt we sent' or read out a one-time code - a classic attacker move.",
+      "Services you use offer MFA but you have not enabled it.",
+      "You receive an MFA enrollment email you did not request - an attacker may be trying to add their own factor to your account."
+    ],
+    "safe_practices": [
+      "Enable MFA on your most important accounts first: email, banking, work accounts, cloud storage.",
+      "Prefer authenticator apps or hardware security keys over SMS codes where possible (SIM-swap attacks can intercept SMS).",
+      "Consider phishing-resistant authentication: FIDO2/WebAuthn security keys and passkeys are bound to the real website, so they do not work on an attacker's lookalike page.",
+      "Learn about passkeys: passkeys (built on WebAuthn/FIDO standards) let you sign in with a device PIN or biometric - no password for attackers to phish at all.",
+      "Never approve an MFA prompt you did not personally trigger.",
+      "Store backup/recovery codes securely (e.g., in your password manager, or printed in a safe place) so you are not locked out."
+    ],
+    "if_it_happens": [
+      "Unexpected MFA prompt: DENY it, then immediately change the password for that account.",
+      "If you accidentally approved a fraudulent prompt: change the password, sign out all sessions, and re-check your MFA settings for devices/keys you do not recognize.",
+      "If you lost your second factor: use the account recovery process with your stored backup codes.",
+      "Report the event - repeated fraudulent prompts mean your password is already compromised."
+    ]
+  },
+  {
+    "module_id": "social-engineering",
+    "title": "Social Engineering",
+    "category": "Social Engineering",
+    "summary": "Attackers hack humans, not just computers - manipulation by phone, chat, and in person.",
+    "reading_minutes": 4,
+    "what_is_it": "Social engineering is the art of manipulating people into breaking normal security procedures: revealing information, granting access, clicking links, or making payments. It includes pretexting (a fake identity or scenario), urgency, authority ('this is the CFO'), friendliness over long periods, and tailgating into buildings.",
+    "why_it_matters": "Every technical control can be bypassed by a convincing human request. A helpdesk scammer who talks a support agent into resetting a password gets in without touching a single vulnerability. Awareness of the manipulation patterns is the strongest defense.",
+    "warning_signs": [
+      "Unsolicited contact that creates urgency, fear or secrecy ('do not tell anyone while the audit is running').",
+      "Authority pressure: the caller claims to be an executive and demands immediate action, bypassing normal process.",
+      "Too much or too specific knowledge: attackers use public information (LinkedIn, company websites) to sound legitimate.",
+      "Requests to bypass verification: 'I lost my phone, that's why I can't do MFA - just reset it for me'.",
+      "Gift-card requests, unusual payment-route changes, or requests for sensitive documents.",
+      "Someone following you through a secure door ('tailgating') or asking you to hold it open."
+    ],
+    "safe_practices": [
+      "Verify identity through an independent, known channel before acting on ANY unusual request - even from senior staff.",
+      "Slow down: legitimate business survives a callback; fraud relies on speed.",
+      "Follow process even when it feels awkward: verification steps exist exactly for these moments.",
+      "Limit what you share publicly (job titles, tools, org structure) that helps attackers craft pretexts.",
+      "Be equally suspicious of very friendly long-term contacts who suddenly ask for favors involving access or money.",
+      "Challenge tailgating politely: 'I'm sorry, policy requires everyone to badge in individually.'"
+    ],
+    "if_it_happens": [
+      "Stop the interaction as soon as you feel pressured; say you will call back through official channels.",
+      "If you already shared information or made a payment: report immediately - fast reporting can reverse payments and block account access.",
+      "Preserve evidence: caller numbers, chat logs, email headers.",
+      "Do not be embarrassed - social engineering is designed to fool careful people; reporting protects others."
+    ]
+  },
+  {
+    "module_id": "safe-browsing",
+    "title": "Safe Browsing",
+    "category": "Safe Browsing",
+    "summary": "Spot malicious sites, avoid drive-by downloads, and browse defensively.",
+    "reading_minutes": 3,
+    "what_is_it": "Safe browsing means using the web in a way that avoids malicious websites, fake downloads, dangerous browser extensions and lookalike domains. Attack sites may deliver malware simply by visiting them ('drive-by download') or by tricking you into clicking a fake 'Update Flash' button.",
+    "why_it_matters": "The browser is the most-used application on any computer and a primary infection route. One accidental download or one rogue extension can siphon credentials, inject content into pages you trust, or enlist your machine in further attacks.",
+    "warning_signs": [
+      "Browser warnings ('Your connection is not private', 'Dangerous site ahead') - never click through them casually.",
+      "Lookalike domains: examp1e.com or example-secure.net instead of the real example.com (safe fictional examples).",
+      "Pop-ups claiming your device is infected and offering a scan or 'cleaner' tool.",
+      "Download buttons that are actually advertisements, or files that arrive as .zip/.exe/.html when you expected a document.",
+      "Websites asking you to install extensions or 'allow notifications' immediately on arrival.",
+      "HTTP (no padlock) pages asking for login details or payments."
+    ],
+    "safe_practices": [
+      "Type important web addresses yourself or use a bookmark instead of following links from emails or search ads.",
+      "Read browser warnings and take them seriously.",
+      "Keep your browser and extensions updated; remove extensions you no longer use.",
+      "Only install extensions from official stores and publishers you trust.",
+      "Check the full URL before entering credentials or payment details.",
+      "Use standard user accounts for daily work rather than administrator accounts."
+    ],
+    "if_it_happens": [
+      "If you landed on a suspicious site: close the tab; do not interact with pop-ups (use the browser's task manager if a dialog traps you).",
+      "If something downloaded automatically: do NOT open it; delete it and report the site.",
+      "If you entered credentials on a fake page: change the password immediately and enable MFA.",
+      "Report the URL to IT/security so it can be blocked for colleagues (defensive blocking only - never visit it again to 'check')."
+    ]
+  },
+  {
+    "module_id": "secure-wifi",
+    "title": "Secure Wi-Fi",
+    "category": "Wi-Fi",
+    "summary": "Public hotspots, evil twins, and how to protect your traffic on untrusted networks.",
+    "reading_minutes": 3,
+    "what_is_it": "Secure Wi-Fi practices protect your data when using wireless networks - especially public hotspots in cafes, airports and hotels - where attackers can intercept traffic, create 'evil twin' hotspots that mimic legitimate ones, or trick devices into auto-joining rogue networks.",
+    "why_it_matters": "On an open network, your traffic can potentially be observed or manipulated by anyone else on that network. Attackers also set up convincing fake hotspots ('Free_Airport_WiFi') specifically to capture credentials injected into captive-portal login pages.",
+    "warning_signs": [
+      "Networks with names almost identical to a legitimate venue's hotspot (Free_Cafe_WiFi_5 vs Free_Cafe_WiFi).",
+      "Captive-portal pages that ask for email passwords or credit-card details just to 'get online'.",
+      "Certificate warnings when visiting normally trusted HTTPS sites - possible interception in progress.",
+      "Your device auto-joins unknown open networks without asking.",
+      "Sudden redirects or unexpected login prompts while browsing on public Wi-Fi."
+    ],
+    "safe_practices": [
+      "Prefer your phone's personal hotspot / tethering over unknown public Wi-Fi for anything sensitive.",
+      "Use your organization's VPN so traffic is encrypted end-to-end even on hostile networks.",
+      "Turn off automatic connection to open networks; forget networks you no longer need.",
+      "Only visit HTTPS sites on untrusted networks and treat certificate warnings as stop signs.",
+      "Disable file sharing / network discovery when on public networks.",
+      "At home: use WPA2/WPA3 with a strong, unique Wi-Fi password and change default router admin credentials."
+    ],
+    "if_it_happens": [
+      "If you suspect you joined a fake hotspot: disconnect immediately and forget the network.",
+      "If you entered credentials into a suspicious captive portal: change them as soon as you are on a trusted connection.",
+      "Report the hotspot name and location to IT/security if it impersonated your organization.",
+      "If you saw certificate errors: note the site and time and mention it in your report - it may indicate a broader issue."
+    ]
+  },
+  {
+    "module_id": "software-updates",
+    "title": "Software Updates & Patching",
+    "category": "Software Updates",
+    "summary": "Why 'remind me later' is risky - updates close the doors attackers use.",
+    "reading_minutes": 3,
+    "what_is_it": "Software updates (patches) fix security vulnerabilities discovered in operating systems, browsers, applications, phones, routers and even cars. Applying updates promptly - ideally automatically - removes known weaknesses before attackers exploit them.",
+    "why_it_matters": "Most successful attacks exploit KNOWN vulnerabilities that already have available fixes. The gap between a patch being released and being applied is the most dangerous window. This project's vulnerability module shows why patch priority should consider context (exposure, criticality, exploitation evidence) rather than CVSS alone.",
+    "warning_signs": [
+      "Systems or apps that constantly defer updates or run on end-of-life versions (no more security fixes at all).",
+      "Fake update pop-ups on websites ('Your browser is out of date - update now!') - these deliver malware.",
+      "Devices you forgot exist: routers, printers, smart TVs, IoT gadgets with years-old firmware.",
+      "Software that no longer receives vendor support but is still used for sensitive work."
+    ],
+    "safe_practices": [
+      "Enable automatic updates for your operating system, browser and phone.",
+      "Restart devices when asked - many updates only finish applying after a reboot.",
+      "Download updates only from the app's built-in updater, the vendor's official site, or your phone's app store - never from a pop-up.",
+      "Keep an inventory mindset: if a device connects to a network, it eventually needs an update.",
+      "In organizations, follow the patch-priority process (context-driven, not just CVSS)."
+    ],
+    "if_it_happens": [
+      "If you realize you ran unpatched, end-of-life software on a sensitive system: tell IT/security so it can be prioritized.",
+      "If you accidentally installed a fake update: disconnect from the network (per policy), do not power off, and report immediately.",
+      "If an update fails or breaks something: report it rather than leaving the system unprotected for weeks."
+    ]
+  },
+  {
+    "module_id": "ransomware-awareness",
+    "title": "Ransomware Awareness",
+    "category": "Ransomware",
+    "summary": "How ransomware disrupts organizations - and the defensive controls that blunt it. Defensive education only.",
+    "reading_minutes": 5,
+    "what_is_it": "Ransomware is malware that denies access to systems or data - classically by ENCRYPTING files - and demands payment to restore access. Modern schemes often add data theft and extortion ('pay or we publish your data'). This module is purely defensive: it explains impacts and protections, never how attacks are built.",
+    "why_it_matters": "Ransomware can cause service disruption, operational downtime, data loss and public exposure of sensitive information. Hospitals have diverted ambulances and manufacturers halted production lines during ransomware incidents. The difference between a bad day and a catastrophe is usually preparation: backups, patching and segmentation.",
+    "warning_signs": [
+      "Files suddenly renamed or unopenable, or documents turning into odd extensions.",
+      "A ransom note text file or full-screen image demanding payment in cryptocurrency.",
+      "Systems becoming unresponsive; services stopping unexpectedly; mass file-rename activity.",
+      "Preceding signals: phishing emails opened, RDP/systems exposed without MFA, unpatched internet-facing services.",
+      "Unusual large outbound transfers (possible data staging before extortion)."
+    ],
+    "safe_practices": [
+      "Backups: keep regular backups, including at least one offline/off-site copy that malware cannot reach - and TEST restores.",
+      "Patching: promptly patch internet-facing systems, VPNs, remote-access tools and known exploited vulnerabilities.",
+      "Least privilege: run as a standard user; limit admin rights so malware cannot spread or disable defenses easily.",
+      "Email security: filtering, attachment sandboxing and user awareness reduce the most common entry path.",
+      "Endpoint protection: EDR/AV with real-time detection, on every host.",
+      "Network segmentation: separate critical systems so an infection in one zone cannot encrypt everything.",
+      "MFA: protect remote access and admin accounts - stolen credentials are a top entry vector.",
+      "Monitoring: watch for mass file changes, suspicious service stops and unusual outbound traffic.",
+      "Incident-response preparation: know your plan, contacts, and legal/comms steps BEFORE an incident."
+    ],
+    "if_it_happens": [
+      "Report immediately to IT/security - early containment prevents most damage.",
+      "Do NOT pay, power-cycle, or 'clean' systems yourself; follow your incident-response plan.",
+      "Isolate affected systems from the network if you are authorized to do so.",
+      "Preserve evidence for investigation and possible law-enforcement involvement.",
+      "Restore from verified clean backups after the environment is secured - never while attackers are still active."
+    ]
+  },
+  {
+    "module_id": "usb-media-safety",
+    "title": "USB / Removable Media Safety",
+    "category": "USB / Removable Media",
+    "summary": "USB drives are a common infection route - handle unknown hardware with care.",
+    "reading_minutes": 3,
+    "what_is_it": "Removable media (USB sticks, external drives, SD cards, charging cables) can carry malware, pose as keyboards or network adapters, or be used to exfiltrate data. 'USB dropping' - leaving infected drives where people will pick them up - is a known attack technique.",
+    "why_it_matters": "Plugging in unknown hardware bypasses network defenses entirely. Devices can impersonate a keyboard and type malicious commands within seconds, or auto-run payloads when mounted. Removable media is also a top channel for accidental data leakage.",
+    "warning_signs": [
+      "USB drives found in parking lots, lobbies or conference rooms.",
+      "Promotional/giveaway USB devices from unknown vendors.",
+      "Cables or 'charging' devices from untrusted sources (malicious cables exist).",
+      "Personal media that has been used in many different computers.",
+      "Files on a borrowed drive with double extensions (report.pdf.exe) or unexpected autorun files."
+    ],
+    "safe_practices": [
+      "Never plug unknown media into work or personal devices - hand found media to IT/security.",
+      "Use company-approved, encrypted media for business data transfer.",
+      "Prefer network/cloud transfer (through approved channels) over USB where possible.",
+      "Disable autorun/autoplay features.",
+      "Scan approved media before opening files (as a layer, not a substitute for caution).",
+      "Never use personal charging cables/power banks from unknown sources with sensitive devices."
+    ],
+    "if_it_happens": [
+      "If you already plugged in unknown media: disconnect it, do not power off, and report to IT/security immediately.",
+      "Note what (if anything) auto-opened and whether any files were viewed.",
+      "If sensitive data was copied to personal/unapproved media, report it so the situation can be contained."
+    ]
+  },
+  {
+    "module_id": "data-privacy",
+    "title": "Data Privacy & Protection",
+    "category": "Privacy",
+    "summary": "Know what data you handle, share it minimally, and respect confidentiality.",
+    "reading_minutes": 4,
+    "what_is_it": "Data privacy means handling personal and sensitive information responsibly: collecting only what is needed, storing it securely, sharing it only with authorized parties, and disposing of it properly. It includes compliance with privacy laws (e.g., GDPR-style principles) and your organization's data-classification rules.",
+    "why_it_matters": "Mishandled personal data harms real people (identity theft, fraud, embarrassment) and exposes organizations to legal, financial and reputational damage. Privacy is also a security function: the less unnecessary data you hold and share, the less there is to leak. This project itself practices data minimization - the quiz collects no personal information at all.",
+    "warning_signs": [
+      "Spreadsheets or documents containing customer/personal data stored in personal cloud drives or email.",
+      "Sharing files with external parties without checking authorization or using approved systems.",
+      "Personal data sent to unencrypted personal email 'to work from home'.",
+      "Screens left visible in public; documents printed and never collected.",
+      "Forms or tools that demand more personal data than the task requires.",
+      "Chatbots or AI tools fed with confidential or personal information."
+    ],
+    "safe_practices": [
+      "Know your organization's data classifications (public / internal / confidential / restricted) and handle data accordingly.",
+      "Share the minimum necessary data with the minimum necessary people ('need to know').",
+      "Use approved, encrypted storage and collaboration platforms.",
+      "Check recipients before sending; be careful with auto-complete addresses.",
+      "Dispose of data securely: shredding for paper, proper deletion for digital.",
+      "Lock your screen whenever you step away (Windows key + L).",
+      "Never paste confidential or personal data into unapproved AI tools or public cloud services."
+    ],
+    "if_it_happens": [
+      "If data was sent or exposed in error: report immediately - quick action (recalling messages, revoking links) limits harm.",
+      "If you find exposed data (misconfigured share, lost device): report it; do not attempt fixes you are not authorized for.",
+      "If a privacy regulator or breach-notification process may apply, only designated staff should communicate externally - report internally first."
+    ]
+  },
+  {
+    "module_id": "mobile-security",
+    "title": "Mobile Security",
+    "category": "Mobile Security",
+    "summary": "Phones hold your accounts, mail and MFA - treat them like the keys they are.",
+    "reading_minutes": 3,
+    "what_is_it": "Mobile security covers protecting smartphones and tablets: screen locks, OS updates, app hygiene, avoiding malicious apps, secure configuration and remote-wipe capability. Your phone is often your MFA device, email client, authenticator and payment tool in one.",
+    "why_it_matters": "A compromised or stolen phone can expose email, corporate data, one-time codes and authentication apps - effectively handing over your digital identity. Mobile malware often hides in unofficial app stores, fake apps, and aggressive 'free' apps.",
+    "warning_signs": [
+      "Battery draining unusually fast or heavy data usage (possible background malware).",
+      "Apps requesting permissions far beyond their function (a flashlight app wanting your SMS).",
+      "Apps installed from outside official stores or via sideloaded files.",
+      "Unexpected configuration profiles (iOS) or 'device admin' apps (Android) after installing something new.",
+      "SMS verification codes arriving that you did not request (someone is trying your credentials).",
+      "A prompt to approve MFA or account changes you did not make."
+    ],
+    "safe_practices": [
+      "Use a strong PIN/passcode (6+ digits or alphanumeric) plus biometrics.",
+      "Install updates promptly; keep the OS and all apps current.",
+      "Install apps only from the official store, prefer reputable publishers, and check reviews/permissions.",
+      "Enable remote-locate and remote-wipe (Find My / Find My Device) BEFORE you need them.",
+      "Turn off automatic connection to open Wi-Fi; use a VPN for sensitive activity on the move.",
+      "Avoid rooting/jailbreaking - it removes built-in protections.",
+      "Keep work and personal profiles separate where your organization provides them."
+    ],
+    "if_it_happens": [
+      "Lost or stolen device: use remote-wipe immediately and report to IT so accounts/tokens can be revoked.",
+      "Suspected malicious app: uninstall it, change passwords for affected accounts, and report.",
+      "Suspicious SMS codes: change the password for that account - someone is actively testing your credentials."
+    ]
+  },
+  {
+    "module_id": "remote-work-security",
+    "title": "Remote Work Security",
+    "category": "Remote Work",
+    "summary": "Working from home or travel without opening new doors to attackers.",
+    "reading_minutes": 3,
+    "what_is_it": "Remote work security adapts office protections to homes, co-working spaces and travel: secure networks, VPNs, device hygiene, physical surroundings and clear boundaries between work and personal technology.",
+    "why_it_matters": "Home networks are rarely managed like corporate ones - old routers, default passwords, smart-home devices on the same LAN. Attackers deliberately target remote workers because they sit outside perimeter defenses. Physical risks (shoulder surfing, overheard calls, visible documents) also rise outside the office.",
+    "warning_signs": [
+      "Router still using its default admin password or years-old firmware.",
+      "Work tasks done on personal devices that lack endpoint protection or updates.",
+      "Sensitive calls taken in public spaces where others can listen.",
+      "Smart TVs, cameras and IoT gadgets sharing the network used for work.",
+      "Family members using the work device for games or downloads.",
+      "Home Wi-Fi password written on the fridge for guests."
+    ],
+    "safe_practices": [
+      "Use the organization's VPN to reach internal systems.",
+      "Secure your home router: unique admin password, WPA2/WPA3, current firmware.",
+      "Keep work on managed, protected, updated devices.",
+      "Lock your screen whenever you step away, even at home.",
+      "Use a privacy screen and headphones for confidential work in public.",
+      "Follow the same phishing/password/MFA discipline as in the office - attackers know remote workers are a prime target."
+    ],
+    "if_it_happens": [
+      "If your home network shows signs of compromise (unknown devices, hijacked DNS): disconnect work devices, report, and change router credentials from a trusted device.",
+      "If a work device is lost or stolen while traveling: remote-wipe and report immediately.",
+      "If you accidentally worked on sensitive data over hostile Wi-Fi without VPN: report it so monitoring can be increased."
+    ]
+  },
+  {
+    "module_id": "cloud-account-security",
+    "title": "Cloud Account Security",
+    "category": "Cloud Account Security",
+    "summary": "Email, storage and SaaS accounts are the new perimeter - lock them down.",
+    "reading_minutes": 4,
+    "what_is_it": "Cloud account security protects your accounts on services like email, file storage, collaboration suites and SaaS platforms: strong authentication, least-privilege app access, token hygiene, and monitoring for suspicious activity.",
+    "why_it_matters": "Cloud accounts concentrate enormous power: your email can reset almost every other account; your storage may hold every document you work on; third-party apps connected to your account can read your data forever unless revoked. Account takeover in the cloud usually means data theft, fraud, and pivot attacks on everyone you communicate with.",
+    "warning_signs": [
+      "Sign-in alerts from unfamiliar countries, devices or times.",
+      "Mail-forwarding rules or signatures you did not create (a classic persistence trick after takeover).",
+      "New 'connected apps' or OAuth grants you do not recognize.",
+      "Colleagues receiving odd messages from your account.",
+      "Unexpected password-reset emails or MFA enrollment requests.",
+      "Storage usage jumping without explanation (possible mass data staging)."
+    ],
+    "safe_practices": [
+      "Protect cloud accounts with unique passwords AND MFA - preferably phishing-resistant (security keys/passkeys).",
+      "Audit third-party app access regularly and revoke anything you no longer use.",
+      "Review forwarding rules, delegates and recovery options periodically.",
+      "Understand sharing settings: 'anyone with the link' is often wider than you intend.",
+      "Use organizational accounts for work data; never mix personal and corporate clouds.",
+      "Treat API keys and tokens like passwords: store them in a secrets manager, never in code repositories."
+    ],
+    "if_it_happens": [
+      "Sign out all sessions, change the password, and re-verify MFA settings immediately.",
+      "Check and remove forwarding rules, delegates and unfamiliar connected apps.",
+      "Review recent activity and shared files for signs of data access.",
+      "Report to IT/security - cloud account compromise often affects more than one person."
+    ]
+  },
+  {
+    "module_id": "incident-reporting",
+    "title": "Incident Reporting",
+    "category": "Incident Reporting",
+    "summary": "See something, say something - fast reporting is the biggest incident-response multiplier.",
+    "reading_minutes": 3,
+    "what_is_it": "Incident reporting is the process of telling the right people about a security event - a clicked link, a lost device, a suspicious message, unusual behavior - quickly and without fear. Reports feed the incident-response process: preparation, detection/identification, containment, eradication, recovery and lessons learned.",
+    "why_it_matters": "Minutes matter. A phished password reported within five minutes can be reset before the attacker logs in; the same password reported three days later usually means a full investigation. Organizations with a strong reporting culture detect incidents dramatically faster. You will never be punished for reporting - only for staying silent.",
+    "warning_signs": [
+      "Anything on the other modules' 'if it happens' lists.",
+      "Unexpected pop-ups, disabled security tools, or new software you did not install.",
+      "Colleagues receiving messages 'from you' that you did not send.",
+      "Systems behaving oddly: slow, crashing, files missing or renamed.",
+      "Any moment you think 'this is probably nothing, but...'."
+    ],
+    "safe_practices": [
+      "Know your reporting channels in advance: the report button, the security alias, the helpdesk number.",
+      "Report suspicions early - false alarms are cheap, late reports are not.",
+      "Include facts: what happened, when, what you clicked/entered, screenshots if safe to take.",
+      "Do not investigate on your own (do not reply to the attacker, revisit the site, or poke the file).",
+      "Do not delete evidence (emails, files, logs) unless instructed.",
+      "Encourage a no-blame culture: report your own mistakes fast; thank others who report."
+    ],
+    "if_it_happens": [
+      "Report immediately through the known channel.",
+      "Follow instructions from IT/security; keep the affected device powered on but disconnected if asked.",
+      "Stay available for follow-up questions.",
+      "Afterwards, share lessons learned so the whole team improves - that is the 'lessons learned' phase of incident response working as intended."
+    ]
+  },
+  {
+    "module_id": "ai-scam-awareness",
+    "title": "AI-Enabled Scam Awareness",
+    "category": "AI-Enabled Scams",
+    "summary": "Cloned voices, deepfake video calls and AI-written lures - next-generation social engineering.",
+    "reading_minutes": 4,
+    "what_is_it": "AI-enabled scams use generative tools to make fraud more convincing: cloned voices of colleagues or relatives ('grandparent scams' with a familiar voice), deepfake video in 'meetings', flawless AI-written phishing without grammar mistakes, and chatbots that build trust over long fake relationships. The manipulation is old - the polish is new.",
+    "why_it_matters": "Traditional phishing tells (bad grammar, odd formatting) are disappearing. Voice cloning needs only seconds of public audio from a video or podcast. Deepfake video has been used in real fraud to impersonate executives in meetings. Defenses must shift from 'does this look sloppy?' to 'is this request verified?'",
+    "warning_signs": [
+      "A voice call from a colleague/relative making an urgent money or credential request - even if the voice sounds exactly right.",
+      "Video calls where the person avoids turning their head, the audio is slightly out of sync, or lighting looks odd.",
+      "Perfectly written messages that still create urgency, secrecy or payment pressure.",
+      "Requests to bypass verification 'just this once' because the executive is 'in a meeting'.",
+      "New contacts who build friendship quickly and then introduce investment or crypto 'opportunities'.",
+      "Voice notes or short clips that cut off oddly or refuse to answer simple interactive questions."
+    ],
+    "safe_practices": [
+      "Establish verification code-words or a callback procedure with family and colleagues for money/credential requests.",
+      "Always verify through a SECOND, independent channel: call the person back on their known number.",
+      "Ask interactive questions a recording or clone cannot handle ('what did we discuss at lunch yesterday?').",
+      "Be extra skeptical of urgency + payment + secrecy combinations, however convincing the delivery.",
+      "Remember: caller ID, email display names and even video can be faked; process is your protection."
+    ],
+    "if_it_happens": [
+      "If you paid or shared credentials: contact your bank/IT immediately - some transfers can be recalled within hours.",
+      "Report the incident, including any numbers, accounts or files involved.",
+      "If a voice/video clone of a colleague or executive was used, warn the impersonated person and your security team - others are probably being targeted too."
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threat Dashboard · Threat Intelligence</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-head">
+      <div>
+        <h1>📊 Threat Intelligence Dashboard</h1>
+        <p>SOC-style overview of the synthetic threat landscape: KPI cards, analytics charts and a
+        filterable recent-threat table. <b>IOC matches are evidence for investigation — never
+        automatic confirmation of compromise.</b></p>
+      </div>
+    </div>
+
+    <!-- KPI cards -->
+    <div class="grid cols-7" id="cards" style="margin-bottom:18px">
+      <div class="stat-card"><div class="stat-value">…</div><div class="stat-label">Total Threat Records</div></div>
+    </div>
+
+    <!-- Charts -->
+    <div class="chart-grid">
+      <div class="panel chart-card wide"><h3>1 · Threats Over Time</h3><div class="panel-sub">Records by last-seen month</div><div class="chart-box tall"><canvas id="chart-over-time"></canvas></div></div>
+      <div class="panel chart-card"><h3>2 · Threats by Severity</h3><div class="panel-sub">Reported severity distribution</div><div class="chart-box"><canvas id="chart-severity"></canvas></div></div>
+      <div class="panel chart-card"><h3>3 · Threats by Category</h3><div class="panel-sub">All 10 threat categories</div><div class="chart-box"><canvas id="chart-category"></canvas></div></div>
+      <div class="panel chart-card"><h3>4 · IOC Type Distribution</h3><div class="panel-sub">Indicator types observed</div><div class="chart-box"><canvas id="chart-ioc"></canvas></div></div>
+      <div class="panel chart-card"><h3>5 · Top ATT&amp;CK Tactics</h3><div class="panel-sub">Justified mappings only</div><div class="chart-box"><canvas id="chart-tactics"></canvas></div></div>
+      <div class="panel chart-card"><h3>6 · Risk Score Distribution</h3><div class="panel-sub">0–100 risk bands</div><div class="chart-box"><canvas id="chart-risk"></canvas></div></div>
+      <div class="panel chart-card"><h3>7 · Confidence Distribution</h3><div class="panel-sub">Evidence-quality bands</div><div class="chart-box"><canvas id="chart-confidence"></canvas></div></div>
+      <div class="panel chart-card"><h3>8 · Vulnerabilities by Severity</h3><div class="panel-sub">Synthetic CVE dataset</div><div class="chart-box"><canvas id="chart-vulnsev"></canvas></div></div>
+      <div class="panel chart-card"><h3>9 · Top Threat Categories</h3><div class="panel-sub">Highest-volume categories</div><div class="chart-box"><canvas id="chart-topcat"></canvas></div></div>
+      <div class="panel chart-card"><h3>10 · Threat Status Distribution</h3><div class="panel-sub">Lifecycle statuses</div><div class="chart-box"><canvas id="chart-status"></canvas></div></div>
+    </div>
+
+    <div class="notice info" style="margin-top:18px"><span class="icon">💡</span>
+      <div><b>Reading these charts:</b> “Risk” describes how concerning an indicator may be;
+      “Confidence” describes evidence quality. A large <em>High Risk / Low Confidence</em> population
+      means “potentially serious but weakly evidenced” — those records need corroboration, not panic.
+      Correlation counts indicate <em>relationships</em>, never attribution.</div>
+    </div>
+
+    <!-- Recent threats table -->
+    <div class="page-head" style="margin-top:26px">
+      <div>
+        <h1 style="font-size:20px">🗂 Recent Threat Records</h1>
+        <p>Filter, sort and investigate. Click any row to open the SOC investigation view.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filters">
+      <div class="filter-group"><label>Severity</label>
+        <select id="f-severity"><option value="">All</option><option>CRITICAL</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option><option>INFORMATIONAL</option></select></div>
+      <div class="filter-group"><label>Category</label><select id="f-category"><option value="">All</option></select></div>
+      <div class="filter-group"><label>Indicator type</label>
+        <select id="f-type"><option value="">All</option><option>IP ADDRESS</option><option>DOMAIN</option><option>URL</option><option>FILE HASH</option><option>EMAIL DOMAIN</option><option>CVE ID</option></select></div>
+      <div class="filter-group"><label>Status</label>
+        <select id="f-status"><option value="">All</option><option>NEW</option><option>UNDER_REVIEW</option><option>MONITORING</option><option>CLOSED</option><option>FALSE_POSITIVE</option></select></div>
+      <div class="filter-group"><label>Min risk</label><input type="number" id="f-risk" min="0" max="100" placeholder="0" style="width:80px"></div>
+      <div class="filter-group"><label>Min confidence</label><input type="number" id="f-conf" min="0" max="100" placeholder="0" style="width:80px"></div>
+      <div class="filter-group"><label>From</label><input type="date" id="f-from"></div>
+      <div class="filter-group"><label>To</label><input type="date" id="f-to"></div>
+      <div class="filter-group"><label>Search</label><input type="text" id="f-q" placeholder="name / ID / indicator" style="width:170px"></div>
+      <div class="filter-group"><label>Sort</label>
+        <select id="f-sort"><option value="newest">Newest</option><option value="risk">Highest risk</option><option value="confidence">Highest confidence</option><option value="observed">Most observed</option></select></div>
+      <button class="btn" onclick="loadThreats(1)">Apply filters</button>
+      <button class="btn secondary" onclick="resetFilters()">Reset</button>
+    </div>
+
+    <div id="table-area">
+      <div class="loading"><div class="spinner"></div><div>Loading threat records…</div></div>
+    </div>
+    <div class="pager" id="pager"></div>
+  </div>
+
+  <footer>Cybersecurity Awareness &amp; Threat Intelligence Dashboard · SYNTHETIC / DEMO ONLY · defensive security education</footer>
+  <script src="js/vendor/chart.umd.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

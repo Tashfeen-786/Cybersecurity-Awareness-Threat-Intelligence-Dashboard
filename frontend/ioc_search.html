@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IOC Search &amp; Validation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-head">
+      <div>
+        <h1>🔎 IOC Search &amp; Validation</h1>
+        <p>Validate an indicator's <b>syntax</b>, then search the local synthetic threat database.
+        Supported: IP · IPv6 · domain · URL · file hash (MD5/SHA-1/SHA-256) · CVE ID · email sender domain.</p>
+      </div>
+    </div>
+
+    <div class="notice danger"><span class="icon">🛑</span>
+      <div><b>Database lookup only.</b> This application NEVER automatically connects to, resolves,
+      pings, visits or contacts any searched indicator. Validation means “is this syntactically
+      valid?” — <b>not</b> “is this malicious?”</div>
+    </div>
+
+    <div class="panel">
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <input type="text" id="search-input" placeholder="e.g. 198.51.100.25 · login-check.invalid · CVE-2026-900002 · hash…"
+               style="flex:1;min-width:280px;font-size:15px;padding:12px 14px" maxlength="2048">
+        <button class="btn" id="search-btn" onclick="doSearch()" style="padding:12px 22px">Search indicator</button>
+      </div>
+      <p class="small muted" style="margin-top:10px">Try the demo scenario:
+        <a href="#" onclick="quickSearch('198.51.100.25');return false" class="mono">198.51.100.25</a> ·
+        <a href="#" onclick="quickSearch('login-check.invalid');return false" class="mono">login-check.invalid</a> ·
+        <a href="#" onclick="quickSearch('https://login-check.invalid/verify-account.html');return false" class="mono">https://login-check.invalid/verify-account.html</a> ·
+        <a href="#" onclick="quickSearch('CVE-2026-900002');return false" class="mono">CVE-2026-900002</a> ·
+        <a href="#" onclick="quickSearch('a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90');return false" class="mono">SHA-256 hash</a>
+      </p>
+    </div>
+
+    <div id="result-area" style="margin-top:18px"></div>
+  </div>
+
+  <footer>Cybersecurity Awareness &amp; Threat Intelligence Dashboard · SYNTHETIC / DEMO ONLY · defensive security education</footer>
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ioc_search.js"></script>
+</body>
+</html>

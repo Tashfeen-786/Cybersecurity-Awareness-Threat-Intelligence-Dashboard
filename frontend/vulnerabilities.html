@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vulnerability Awareness &amp; Prioritization</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-head">
+      <div>
+        <h1>🛠️ Vulnerability Awareness</h1>
+        <p>Synthetic CVE records with <b>contextual prioritization</b>: CVSS + asset criticality +
+        exposure + known exploitation evidence + business context. <b>CVSS alone should not decide
+        patch priority.</b></p>
+      </div>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="panel">
+        <h3>Why not CVSS alone?</h3>
+        <p class="panel-sub">The two teaching examples from the synthetic dataset</p>
+        <div id="teaching-examples"><div class="loading"><div class="spinner"></div><div>Loading…</div></div></div>
+      </div>
+      <div class="panel">
+        <h3>How the priority score is built</h3>
+        <p class="panel-sub">Every factor is 0–100 with a documented weight</p>
+        <div class="factor-row"><span class="fname">CVSS base severity</span><div class="fbar"><i style="width:35%"></i></div><span class="fval">×0.35</span></div>
+        <div class="factor-row"><span class="fname">Asset criticality</span><div class="fbar"><i style="width:20%"></i></div><span class="fval">×0.20</span></div>
+        <div class="factor-row"><span class="fname">Exposure</span><div class="fbar"><i style="width:20%"></i></div><span class="fval">×0.20</span></div>
+        <div class="factor-row"><span class="fname">Known exploitation</span><div class="fbar"><i style="width:15%"></i></div><span class="fval">×0.15</span></div>
+        <div class="factor-row"><span class="fname">Business context</span><div class="fbar"><i style="width:10%"></i></div><span class="fval">×0.10</span></div>
+        <div class="notice info" style="margin-top:12px;margin-bottom:0"><span class="icon">💡</span>
+          <div class="small"><b>Example:</b> a CVSS 9.8 CRITICAL on an isolated lab asset with no
+          exploitation evidence scores <b>52/100</b>, while a CVSS 8.1 HIGH on an internet-facing,
+          mission-critical VPN gateway with active exploitation scores <b>~93</b>. Context flips the
+          order — that is risk-based vulnerability management.</div></div>
+      </div>
+    </div>
+
+    <div class="filter-bar" style="margin-top:18px">
+      <div class="filter-group"><label>Severity</label>
+        <select id="f-sev"><option value="">All</option><option>CRITICAL</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option></select></div>
+      <div class="filter-group"><label>Product category</label><input type="text" id="f-cat" placeholder="e.g. VPN Gateway"></div>
+      <div class="filter-group"><label>Sort</label>
+        <select id="f-sort"><option value="priority">Contextual priority</option><option value="cvss">CVSS only</option><option value="newest">Newest</option></select></div>
+      <button class="btn" onclick="loadVulns()">Apply</button>
+    </div>
+
+    <div id="vuln-table"><div class="loading"><div class="spinner"></div><div>Loading vulnerabilities…</div></div></div>
+    <div id="vuln-detail"></div>
+  </div>
+
+  <footer>Cybersecurity Awareness &amp; Threat Intelligence Dashboard · SYNTHETIC / DEMO ONLY · defensive security education · no exploitation instructions</footer>
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/vulnerabilities.js"></script>
+</body>
+</html>

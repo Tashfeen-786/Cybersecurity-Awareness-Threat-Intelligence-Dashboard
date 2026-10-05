@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC Investigation Workflow &amp; Incident Response</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-head">
+      <div>
+        <h1>🖥️ SOC Investigation Workflow</h1>
+        <p>How a Security Operations Center analyst moves from raw threat data to a documented
+        decision — the Tier&nbsp;1 triage workflow this dashboard is built to demonstrate.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>From feed to decision</h3>
+      <p class="panel-sub">The complete intelligence pipeline implemented in this project</p>
+      <div class="flow">
+        <div class="flow-step"><span class="fs-num">1</span>Threat feed</div><span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="fs-num">2</span>IOC detected</div><span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="fs-num">3</span>Validation</div><span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="fs-num">4</span>Enrichment</div><span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="fs-num">5</span>Risk + confidence</div>
+      </div>
+      <div class="flow">
+        <div class="flow-step"><span class="fs-num">6</span>Alert</div><span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="fs-num">7</span>SOC queue</div><span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="fs-num">8</span>Analyst triage</div><span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="fs-num">9</span>Correlation</div><span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="fs-num">10</span>Investigation</div>
+      </div>
+      <div class="flow">
+        <div class="flow-step"><span class="fs-num">11</span>Escalate / monitor / resolve / false positive</div><span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="fs-num">12</span>Documentation</div>
+      </div>
+    </div>
+
+    <div class="grid cols-2" style="margin-top:16px">
+      <div class="panel">
+        <h3>What a Tier 1 SOC analyst actually does</h3>
+        <div class="section-block" style="margin-top:10px">
+          <ul>
+            <li><b>Monitor the queue</b> — triage NEW alerts first (sorted by severity/risk), starting with CRITICAL and HIGH.</li>
+            <li><b>Validate the indicator</b> — is it syntactically valid? Is it already known? Is the intelligence stale?</li>
+            <li><b>Enrich</b> — first/last seen, categories, sources, related alerts, correlation cluster, ATT&amp;CK context.</li>
+            <li><b>Check for authorized/benign use</b> — shared infrastructure, CDN, security scanner, stale feed entries. This is where most false positives are caught.</li>
+            <li><b>Correlate</b> — are other indicators, hosts or alerts part of the same cluster? (Correlation = evidence, not attribution.)</li>
+            <li><b>Decide &amp; document</b> — escalate to Tier 2, keep monitoring, resolve, or mark false positive — always with a written note explaining why.</li>
+            <li><b>Feed lessons back</b> — false-positive patterns become tuning requests; confirmed threats become detections and awareness material.</li>
+          </ul>
+        </div>
+        <div class="notice warn" style="margin:8px 0 0"><span class="icon">🛑</span>
+          <div class="small"><b>Never:</b> contact/visit the indicator, execute sample files, or assume
+          an IOC match proves compromise. Analysis is defensive and data-only.</div></div>
+      </div>
+
+      <div class="panel">
+        <h3>IOC lifecycle</h3>
+        <p class="panel-sub">Observed → Validated → Enriched → Scored → Investigated → Monitored → Expired/Closed</p>
+        <ul class="timeline">
+          <li><div class="tl-type">Observed</div><div class="tl-desc">Artifact first appears in telemetry or a feed.</div></li>
+          <li><div class="tl-type">Validated</div><div class="tl-desc">Syntax checked; duplicates recognized.</div></li>
+          <li><div class="tl-type">Enriched</div><div class="tl-desc">Local context added: categories, sources, clusters, ATT&amp;CK.</div></li>
+          <li><div class="tl-type">Scored</div><div class="tl-desc">Separate risk and confidence scores assigned.</div></li>
+          <li><div class="tl-type">Investigated</div><div class="tl-desc">Analyst triage decides relevance.</div></li>
+          <li><div class="tl-type">Monitored</div><div class="tl-desc">Watched for further observations.</div></li>
+          <li class="tl-CLOSED"><div class="tl-type">Expired / Closed</div><div class="tl-desc">Stale, benign or resolved — indicators expire because they go stale.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px">
+      <h3>🚨 Incident-response lifecycle (educational)</h3>
+      <p class="panel-sub">High-level phases — exact terminology varies between frameworks (e.g., NIST), but the phases are consistent.</p>
+      <div class="grid cols-3" style="grid-template-columns:repeat(6,1fr)">
+        ${[
+          ["1 · Preparation", "Policies, backups, logging, playbooks, training — done before any incident."],
+          ["2 · Detection / Identification", "Alert fires; analyst confirms something real may be happening."],
+          ["3 · Containment", "Stop the spread: isolate systems, block indicators, revoke credentials."],
+          ["4 · Eradication", "Remove the root cause: malware, accounts, vulnerabilities, persistence."],
+          ["5 · Recovery", "Restore from clean backups; verify systems are healthy before reconnecting."],
+          ["6 · Lessons Learned", "Post-incident review: what worked, what failed, what to improve."],
+        ].map(([t, d]) => `
+          <div class="concept-card">
+            <div class="cc-title">${escapeHtml(t)}</div>
+            <div class="cc-desc">${escapeHtml(d)}</div>
+          </div>`).join("")}
+      </div>
+      <div class="notice danger" style="margin-top:14px;margin-bottom:0"><span class="icon">⚖️</span>
+        <div class="small">Educational content only — no destructive response actions are included or
+        performed. In a real incident, responders follow their organization's approved IR plan.</div></div>
+    </div>
+
+    <div class="panel" style="margin-top:16px">
+      <h3>✅ User incident-response checklist (what YOU should do)</h3>
+      <div class="section-block" style="margin-top:8px">
+        <ul>
+          <li>Recognize something is wrong (phishing clicked, device lost, odd system behavior).</li>
+          <li>Stop interacting: don't reply, don't revisit links, don't "test" attachments.</li>
+          <li>Report immediately through the known channel (button / alias / helpdesk).</li>
+          <li>Preserve evidence: keep the email, note times, don't delete or power-cycle devices.</li>
+          <li>Change credentials fast if you entered them anywhere (email account first).</li>
+          <li>Follow instructions from IT/security and stay available for questions.</li>
+          <li>Afterwards: complete the recommended awareness module — lessons learned make everyone stronger.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>Cybersecurity Awareness &amp; Threat Intelligence Dashboard · SYNTHETIC / DEMO ONLY · defensive security education</footer>
+  <script src="js/common.js"></script>
+</body>
+</html>

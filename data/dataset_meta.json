@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-10-04T23:27:29+00:00",
+  "seed": 20260930,
+  "record_count": 2200,
+  "vulnerability_count": 60,
+  "demo_threat_id": "THR-2026-001",
+  "safety_notice": "All indicators are synthetic and use only documentation ranges (RFC 5737 / RFC 3849), example/invalid domains (RFC 2606), random synthetic hashes and fictional CVE-format IDs. SYNTHETIC / DEMO ONLY. No real, live or malicious indicators are included, and no indicator is ever contacted."
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Awareness &amp; Threat Intelligence Dashboard</title>
+  <meta name="description" content="Defensive cybersecurity education platform: threat intelligence analytics, IOC analysis, risk and confidence scoring, MITRE ATT&CK mapping, vulnerability awareness and security awareness training. Synthetic/demo data only.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+
+    <section class="hero">
+      <h1>Cybersecurity Awareness &amp;<br><span class="hl">Threat Intelligence</span> Dashboard</h1>
+      <p>A unified <strong>defensive</strong> dashboard that ingests synthetic threat-intelligence data,
+      normalizes and enriches it, scores organizational risk, visualizes threats, and teaches
+      cybersecurity awareness — combining <strong>human defense</strong> with
+      <strong>technical threat intelligence</strong>.</p>
+      <p style="margin-top:10px">
+        <span class="badge sev-INFORMATIONAL">100% offline</span>
+        <span class="badge st-FALSE_POSITIVE">synthetic data only</span>
+        <span class="badge st-NEW">defensive security</span>
+        <span class="badge cat">SOC-style workflow</span>
+      </p>
+    </section>
+
+    <div class="notice warn"><span class="icon">⚠️</span>
+      <div><strong>IOC match ≠ automatic confirmed compromise.</strong> An indicator match is
+      <em>evidence for investigation</em>, not proof of a breach. Indicators can be stale, shared by
+      benign infrastructure, or lack context. This dashboard supports analyst judgement — it never
+      replaces it. All data on this site is <strong>SYNTHETIC / DEMO ONLY</strong>.</div>
+    </div>
+
+    <h3 style="margin:20px 0 4px">Five concepts this dashboard keeps strictly separate</h3>
+    <div class="concept-grid">
+      <div class="concept-card"><div class="cc-title">OBSERVATION</div><div class="cc-desc">A single raw sighting of an artifact in telemetry (e.g. one DNS query seen in logs).</div></div>
+      <div class="concept-card"><div class="cc-title">INDICATOR</div><div class="cc-desc">A validated, normalized artifact (IP, domain, URL, hash, CVE) that can be tracked and enriched.</div></div>
+      <div class="concept-card"><div class="cc-title">ALERT</div><div class="cc-desc">A notification generated when thresholds or correlation rules fire — a cue for triage, not a verdict.</div></div>
+      <div class="concept-card"><div class="cc-title">THREAT</div><div class="cc-desc">An assessed record describing potentially malicious activity, scored for risk and confidence.</div></div>
+      <div class="concept-card"><div class="cc-title">INCIDENT</div><div class="cc-desc">A <em>confirmed</em> event violating security policy — established only by human investigation.</div></div>
+    </div>
+
+    <div class="grid cols-2" style="margin-top:8px">
+      <div class="panel">
+        <h3>📈 Risk score vs Confidence score</h3>
+        <p class="panel-sub">Two different questions — never blended.</p>
+        <div class="kv-grid">
+          <div class="kv"><div class="k">Risk score</div><div class="v">“How concerning may this indicator/event be?”<br><span class="muted small">Severity 30% · Confidence 25% · Recency 15% · Frequency 10% · Source reliability 10% · Context 10%</span></div></div>
+          <div class="kv"><div class="k">Confidence score</div><div class="v">“How strong is the evidence behind the intelligence?”<br><span class="muted small">Source reliability, corroboration, observation count, staleness.</span></div></div>
+        </div>
+        <div class="notice info" style="margin-bottom:0"><span class="icon">💡</span>
+          <div><b>Risk 90 / Confidence 25</b> → potentially serious, but the evidence is weak. ·
+          <b>Risk 70 / Confidence 95</b> → high-confidence intelligence with meaningful risk.
+          <br><b>High risk does NOT automatically mean confirmed compromise.</b></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>🔗 Intelligence pipeline (offline)</h3>
+        <p class="panel-sub">Synthetic feed → analysis → SOC action → awareness.</p>
+        <div class="flow">
+          <div class="flow-step"><span class="fs-num">1</span>Synthetic threat data</div><span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">2</span>Normalization</div><span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">3</span>IOC validation</div><span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">4</span>Enrichment</div>
+        </div>
+        <div class="flow">
+          <div class="flow-step"><span class="fs-num">5</span>Risk + confidence</div><span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">6</span>Correlation</div><span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">7</span>Alert engine</div><span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">8</span>ATT&amp;CK mapping</div>
+        </div>
+        <div class="flow">
+          <div class="flow-step"><span class="fs-num">9</span>SOC dashboard</div><span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">10</span>Analyst triage</div><span class="flow-arrow">→</span>
+          <div class="flow-step"><span class="fs-num">11</span>Awareness &amp; training</div>
+        </div>
+        <p class="small muted" style="margin-top:10px">Parallel track: awareness content → learning modules →
+        quiz engine → awareness score → personalized recommendations.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:26px 0 12px">Explore the platform</h3>
+    <div class="nav-cards">
+      <a class="nav-card" href="threat-dashboard.html"><span class="nc-icon">📊</span><h4>Threat Dashboard</h4><p>SOC-style overview: 7 KPI cards, 10 charts, filterable threat table.</p></a>
+      <a class="nav-card" href="ioc_search.html"><span class="nc-icon">🔎</span><h4>IOC Search</h4><p>Validate and search IPs, domains, URLs, hashes and CVEs — local database lookup only.</p></a>
+      <a class="nav-card" href="alerts.html"><span class="nc-icon">🚨</span><h4>Alert Queue</h4><p>SOC alert triage with correlation, observation counts and status workflow.</p></a>
+      <a class="nav-card" href="vulnerabilities.html"><span class="nc-icon">🛠️</span><h4>Vulnerabilities</h4><p>Synthetic CVEs with contextual prioritization — CVSS alone is not enough.</p></a>
+      <a class="nav-card" href="mitre_attack.html"><span class="nc-icon">🎯</span><h4>MITRE ATT&amp;CK</h4><p>Tactics, techniques and frequency — mapped only where context justifies it.</p></a>
+      <a class="nav-card" href="awareness.html"><span class="nc-icon">🎓</span><h4>Awareness Center</h4><p>15 learning modules from phishing to AI-enabled scams.</p></a>
+      <a class="nav-card" href="quiz.html"><span class="nc-icon">🧠</span><h4>Security Quiz</h4><p>36 questions across 10 categories with scored results and recommendations.</p></a>
+      <a class="nav-card" href="executive_summary.html"><span class="nc-icon">📋</span><h4>Executive View</h4><p>Management-friendly threat landscape summary and defensive priorities.</p></a>
+    </div>
+
+    <div class="notice danger" style="margin-top:26px"><span class="icon">⚖️</span>
+      <div><strong>Ethical &amp; safety disclaimer.</strong> This project is designed exclusively for
+      defensive cybersecurity education, threat-intelligence analysis, and security awareness. It does
+      not execute, deploy, or interact with malicious payloads or unauthorized systems. Indicators are
+      analysed as <em>data only</em> — never contacted, resolved, visited or executed.</div>
+    </div>
+  </div>
+
+  <footer>
+    Cybersecurity Awareness &amp; Threat Intelligence Dashboard · SYNTHETIC / DEMO ONLY ·
+    Defensive security education project · FastAPI + SQLite + Chart.js
+  </footer>
+  <script src="js/common.js"></script>
+</body>
+</html>

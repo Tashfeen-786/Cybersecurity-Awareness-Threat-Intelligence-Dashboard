@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MITRE ATT&amp;CK Mapping</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-head">
+      <div>
+        <h1>🎯 MITRE ATT&amp;CK Mapping</h1>
+        <p>Adversary-behaviour context for the synthetic threat records — mapped <b>only where
+        behavioural context justifies it</b>. Technique IDs are real ATT&amp;CK IDs; they are never
+        invented when evidence is insufficient.</p>
+      </div>
+    </div>
+
+    <div class="grid cols-3" style="margin-bottom:16px">
+      <div class="panel">
+        <h3>Tactic</h3>
+        <p class="panel-sub">WHY an adversary performs an action — the objective.</p>
+        <p class="small muted">Example: <b>Initial Access</b> = getting in.</p>
+      </div>
+      <div class="panel">
+        <h3>Technique</h3>
+        <p class="panel-sub">HOW the objective may be achieved.</p>
+        <p class="small muted">Example: <b>T1566 Phishing</b> — one way to gain initial access.</p>
+      </div>
+      <div class="panel">
+        <h3>Sub-technique</h3>
+        <p class="panel-sub">A more specific implementation.</p>
+        <p class="small muted">Example: <b>T1566.002 Spearphishing Link</b>.</p>
+      </div>
+    </div>
+
+    <div class="notice info"><span class="icon">🎯</span>
+      <div><b>IOC vs ATT&amp;CK:</b> an IOC tells us <b>WHAT</b> artifact was observed
+      (domain, IP, hash…). ATT&amp;CK helps describe <b>HOW</b> behaviour may relate to adversary
+      techniques. A domain alone proves nothing about technique — mapping requires behavioural
+      context, and this project omits mapping rather than guessing.</div>
+    </div>
+
+    <div id="attack-root">
+      <div class="loading"><div class="spinner"></div><div>Loading ATT&amp;CK analytics…</div></div>
+    </div>
+  </div>
+
+  <footer>Cybersecurity Awareness &amp; Threat Intelligence Dashboard · SYNTHETIC / DEMO ONLY · ATT&amp;CK reference: attack.mitre.org</footer>
+  <script src="js/vendor/chart.umd.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/attack.js"></script>
+</body>
+</html>

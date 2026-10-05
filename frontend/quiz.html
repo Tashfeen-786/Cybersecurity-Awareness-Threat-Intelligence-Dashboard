@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Awareness Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-head">
+      <div>
+        <h1>🧠 Security Awareness Quiz</h1>
+        <p id="quiz-sub">36 questions across 10 categories. Answers are graded server-side;
+        correct answers are never sent to the browser before submission.</p>
+      </div>
+    </div>
+
+    <div class="notice info"><span class="icon">🎓</span>
+      <div><b>This is an educational score.</b> It is <u>not</u> an employee fitness or competency
+      judgment — it only suggests which awareness modules to review next.
+      Score bands: 0–40 Needs Improvement · 41–60 Basic Awareness · 61–80 Good Awareness ·
+      81–100 Strong Awareness.</div>
+    </div>
+
+    <div id="quiz-root">
+      <div class="loading"><div class="spinner"></div><div>Loading questions…</div></div>
+    </div>
+  </div>
+
+  <footer>Cybersecurity Awareness &amp; Threat Intelligence Dashboard · SYNTHETIC / DEMO ONLY · no personal data is collected</footer>
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

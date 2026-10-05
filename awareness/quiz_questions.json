@@ -1,0 +1,470 @@
+[
+  {
+    "question_id": "Q001",
+    "category": "Phishing",
+    "question": "You receive an unexpected message stating your account will be deactivated in 24 hours and asking you to urgently verify your password via a link. What should you do?",
+    "options": [
+      "Click the link immediately to save the account",
+      "Reply with your password to confirm ownership",
+      "Verify through an official trusted channel (type the site address yourself or contact support)",
+      "Forward your credentials to IT so they can check"
+    ],
+    "correct_answer": 2,
+    "explanation": "Urgency plus a credential request is the classic phishing pattern. Legitimate services never ask you to confirm a password by email. Always verify independently through an official channel."
+  },
+  {
+    "question_id": "Q002",
+    "category": "Phishing",
+    "question": "Which of these is the SAFEST way to inspect a link in an email before deciding to click it?",
+    "options": [
+      "Read the link text shown in the email body",
+      "Hover over the link and read the actual destination URL",
+      "Click it quickly to see what loads",
+      "Ask a colleague to click it first"
+    ],
+    "correct_answer": 1,
+    "explanation": "Link text can say anything while pointing anywhere. Hovering (or long-pressing on mobile) reveals the real destination URL so you can check the true domain."
+  },
+  {
+    "question_id": "Q003",
+    "category": "Phishing",
+    "question": "An email from 'IT Support <helpdesk-team@mail.invalid>' asks you to open the attached 'security update.zip'. What is the biggest red flag?",
+    "options": [
+      "The subject line is too short",
+      "The email was sent on a weekend",
+      "An unexpected attachment combined with an untrusted/lookalike sender domain",
+      "The email has no signature"
+    ],
+    "correct_answer": 2,
+    "explanation": "Unexpected attachments from senders whose domain does not match the organization are a primary malware delivery method. Genuine security updates come through managed tools, not zip attachments."
+  },
+  {
+    "question_id": "Q004",
+    "category": "Phishing",
+    "question": "What is 'quishing'?",
+    "options": [
+      "Phishing performed using QR codes",
+      "A password-cracking technique",
+      "A type of firewall bypass",
+      "Queue-based load balancing"
+    ],
+    "correct_answer": 0,
+    "explanation": "Quishing is phishing via QR codes. The code hides the real URL from your eyes, so you cannot hover or read it before landing on the attacker's page. Never scan unexpected QR codes."
+  },
+  {
+    "question_id": "Q005",
+    "category": "Phishing",
+    "question": "You clicked a phishing link but closed the page without entering anything. What should you do?",
+    "options": [
+      "Nothing - nothing was entered, so no harm done",
+      " Delete the email and stay quiet to avoid embarrassment",
+      "Report it through your organization's reporting process so the message can be blocked for others",
+      "Revisit the link to check whether it was really malicious"
+    ],
+    "correct_answer": 2,
+    "explanation": "Reporting protects colleagues (the same campaign is probably hitting other inboxes) and lets security check whether the page attempted drive-by malware. Never revisit a suspicious link to 'check' - that is the exact behavior attackers rely on."
+  },
+  {
+    "question_id": "Q006",
+    "category": "Phishing",
+    "question": "Which combination is MOST characteristic of a phishing email?",
+    "options": [
+      "Long, detailed technical documentation",
+      "Urgency, unexpected request, and pressure to bypass normal process",
+      "A newsletter you subscribed to",
+      "An automated calendar reminder"
+    ],
+    "correct_answer": 1,
+    "explanation": "Urgency ('act now!'), an unexpected request, and pressure to bypass normal procedures are the core social-engineering ingredients of phishing, regardless of how polished the message looks."
+  },
+  {
+    "question_id": "Q007",
+    "category": "Passwords",
+    "question": "Which password choice is the strongest?",
+    "options": [
+      "P@ssw0rd2026!",
+      "A long passphrase of 4+ random words like 'canvas-lantern-motive-train'",
+      "Your child's name and birth year",
+      "The same strong password reused on every site"
+    ],
+    "correct_answer": 1,
+    "explanation": "Length beats complexity theatre. A long random-word passphrase is hard to crack but easy to remember, and uniqueness per site stops one breach unlocking everything."
+  },
+  {
+    "question_id": "Q008",
+    "category": "Passwords",
+    "question":": Why is password reuse dangerous?",
+    "options": [
+      "It slows down the login process",
+      "If one site is breached, attackers replay the same credentials everywhere (credential stuffing)",
+      "Reused passwords expire faster",
+      "It only matters for email accounts"
+    ],
+    "correct_answer": 1,
+    "explanation": "Attackers feed billions of leaked username/password pairs into automated login attempts on other sites. One breach + reuse = many compromised accounts."
+  },
+  {
+    "question_id": "Q009",
+    "category": "Passwords",
+    "question": "What is the main benefit of a password manager?",
+    "options": [
+      "It makes all passwords the same so they are easy to remember",
+      "It generates and stores a unique, strong password for every account so you only remember one master passphrase",
+      "It removes the need for MFA",
+      "It emails your passwords to you when you forget them"
+    ],
+    "correct_answer": 1,
+    "explanation": "Password managers generate strong unique credentials per site and store them encrypted. You memorize one strong master passphrase. (They complement - not replace - MFA.)"
+  },
+  {
+    "question_id": "Q010",
+    "category": "Passwords",
+    "question": "A service you use announces a data breach. What is the correct first action?",
+    "options": [
+      "Wait to see if anything happens",
+      "Change that password immediately (and anywhere it was reused), and verify MFA",
+      "Close the account entirely",
+      "Only act if you receive a phishing email"
+    ],
+    "correct_answer": 1,
+    "explanation": "Act on breach notifications immediately: change the password for the breached service, change it anywhere it was reused, and confirm MFA is enabled. Fast response beats the attackers' replay attempts."
+  },
+  {
+    "question_id": "Q011",
+    "category": "MFA",
+    "question": "What does MFA (multi-factor authentication) require?",
+    "options": [
+      "Two different passwords",
+      "A password plus a second proof of identity, such as an authenticator app code or security key",
+      "Logging in from two devices",
+      "A longer password"
+    ],
+    "correct_answer": 1,
+    "explanation": "MFA combines something you know (password) with something you have (app, key, smartcard) or something you are (biometrics). A stolen password alone is then usually not enough to log in."
+  },
+  {
+    "question_id": "Q012",
+    "category": "MFA",
+    "question": "You receive an MFA push notification on your phone, but you are NOT trying to log in. What should you do?",
+    "options": [
+      "Approve it - it is probably a glitch",
+      "Deny it and immediately change the password for that account",
+      "Ignore it and continue working",
+      "Turn off MFA to stop the notifications"
+    ],
+    "correct_answer": 1,
+    "explanation": "An MFA prompt you did not trigger means someone already has your password and is hoping you approve by reflex. Deny, then change the password right away."
+  },
+  {
+    "question_id": "Q013",
+    "category": "MFA",
+    "question": "Which authentication method is considered the MOST phishing-resistant?",
+    "options": [
+      "SMS one-time codes",
+      "Security keys / passkeys based on FIDO2/WebAuthn standards",
+      "Security questions like your mother's maiden name",
+      "Email verification links"
+    ],
+    "correct_answer": 1,
+    "explanation": "FIDO2/WebAuthn security keys and passkeys are cryptographically bound to the legitimate website, so they fail on an attacker's lookalike page. SMS codes can be intercepted (e.g., SIM swapping) and phished."
+  },
+  {
+    "question_id": "Q014",
+    "category": "Social Engineering",
+    "question": "A caller claims to be the CFO, says he is in an urgent meeting, and demands an immediate wire transfer to a new account, insisting on secrecy. What is this attack called?",
+    "options": [
+      "SQL injection",
+      "CEO fraud / business email compromise-style impersonation",
+      "A denial-of-service attack",
+      "Port scanning"
+    ],
+    "correct_answer": 1,
+    "explanation": "Authority + urgency + secrecy + payment change is the signature of CEO fraud. Verify through an independent channel (call the CFO's known number) before any action, no matter how convincing the story."
+  },
+  {
+    "question_id": "Q015",
+    "category": "Social Engineering",
+    "question":": Someone phones the helpdesk claiming to be an employee who lost their phone and cannot use MFA, asking for a password reset 'just this once'. The correct response is:",
+    "options": [
+      "Reset it - they sound genuine and upset",
+      "Follow the identity-verification procedure strictly, even if it feels awkward",
+      "Reset it but log the request",
+      "Give them a temporary password over chat instead"
+    ],
+    "correct_answer": 1,
+    "explanation": "Verification procedures exist precisely for these moments. A real employee understands identity checks; an attacker relies on the helpdesk bending the process under social pressure."
+  },
+  {
+    "question_id": "Q016",
+    "category": "Social Engineering",
+    "question": "What is 'tailgating' in a security context?",
+    "options": [
+      "Following closely behind someone through a secure door without badging in",
+      "Sending repeated phishing emails",
+      "Driving behind a company vehicle",
+      "A network scanning technique"
+    ],
+    "correct_answer": 0,
+    "explanation": "Tailgating (piggybacking) is physical social engineering - slipping into a restricted area behind an authorized person. Politely hold the line: everyone must badge in individually."
+  },
+  {
+    "question_id": "Q017",
+    "category": "Social Engineering",
+    "question": "Attackers often research LinkedIn and company websites before an attack. Why?",
+    "options": [
+      "To find job openings",
+      "To gather names, roles and relationships that make impersonation and pretexts convincing",
+      "LinkedIn pays them to",
+      "To estimate company revenue"
+    ],
+    "correct_answer": 1,
+    "explanation": "Public information lets attackers craft believable pretexts ('I'm from the finance team, you met me at the offsite'). Limit what you share publicly and treat specific personal knowledge in unexpected messages as a warning sign, not proof."
+  },
+  {
+    "question_id": "Q018",
+    "category": "Safe Browsing",
+    "question": "A website pop-up says 'Your computer is infected! Click here to scan now.' What should you do?",
+    "options": [
+      "Click it - a scan cannot hurt",
+      "Close the tab/pop-up without clicking; use the browser's task manager if the dialog traps you",
+      "Download their cleaning tool to be safe",
+      "Enter your antivirus license key"
+    ],
+    "correct_answer": 1,
+    "explanation": "Fake 'infection' pop-ups are scareware delivery. Close without interacting; if the dialog blocks closing, kill the browser process from the browser's or system's task manager. Real antivirus does not advertise this way on random websites."
+  },
+  {
+    "question_id": "Q019",
+    "category": "Safe Browsing",
+    "question": "Which URL is MOST likely a lookalike domain impersonating 'example-bank.com' (fictional)?",
+    "options": [
+      "https://example-bank.com/login",
+      "https://example-bank.com-secure.net/login",
+      "https://www.example-bank.com",
+      "https://example-bank.com/accounts"
+    ],
+    "correct_answer": 1,
+    "explanation": "The real domain is what sits immediately before the first single slash: 'example-bank.com-secure.net' is a completely different domain whose name merely contains the target. Read domains right-to-left from the first slash."
+  },
+  {
+    "question_id": "Q020",
+    "category": "Safe Browsing",
+    "question": "Your browser shows a 'Your connection is not private' certificate warning on a site you use daily. What is the correct action?",
+    "options": [
+      "Click 'Advanced -> Proceed' - the site is probably fine",
+      "Stop, do not proceed, and report it (it may indicate interception or a misconfigured/attacker-controlled host)",
+      "Disable HTTPS in the browser settings",
+      "Try the site in another browser"
+    ],
+    "correct_answer": 1,
+    "explanation": "Certificate errors on sites that normally work can mean your traffic is being intercepted - a serious red flag. Do not click through; report it so the cause can be investigated."
+  },
+  {
+    "question_id": "Q021",
+    "category": "Ransomware",
+    "question": "What does ransomware typically do?",
+    "options": [
+      "Speeds up your computer for a fee",
+      "Denies access to systems/data (classically by encrypting files) and demands payment, often adding data-theft extortion",
+      "Mines cryptocurrency with permission",
+      "Blocks ads in the browser"
+    ],
+    "correct_answer": 1,
+    "explanation": "Ransomware denies availability - usually encrypting files - and demands payment. Modern campaigns often also steal data first and threaten to publish it. Understanding the impact drives the defenses: backups, patching, least privilege, segmentation."
+  },
+  {
+    "question_id": "Q022",
+    "category": "Ransomware",
+    "question": "Which backup practice best protects against ransomware?",
+    "options": [
+      "Backups stored on the same file server as the original data",
+      "Regular backups including at least one offline/off-site copy, with restore procedures that are tested",
+      "A single backup kept on a permanently connected external drive",
+      "Trusting the cloud sync folder alone"
+    ],
+    "correct_answer": 1,
+    "explanation": "Ransomware actively encrypts reachable storage - including connected backups and sync folders. An offline/off-site copy the malware cannot touch, plus TESTED restores, is what makes recovery possible."
+  },
+  {
+    "question_id": "Q023",
+    "category": "Ransomware",
+    "question": "During a suspected ransomware incident, what should an ordinary user do?",
+    "options": [
+      "Pay the ransom personally to resolve it quickly",
+      "Report immediately to IT/security and follow instructions; isolate systems if authorized, and do not power off or 'clean' anything yourself",
+      "Reinstall Windows immediately",
+      "Keep working normally to avoid panic"
+    ],
+    "correct_answer": 1,
+    "explanation": "Fast reporting enables containment while attackers are still active. Powering off can destroy volatile evidence; paying funds criminal ecosystems and offers no guarantee of recovery. Follow the incident-response plan."
+  },
+  {
+    "question_id": "Q024",
+    "category": "Privacy",
+    "question": "What does 'data minimization' mean?",
+    "options": [
+      "Compressing files to save space",
+      "Collecting and sharing only the personal data that is actually needed for the task",
+      "Hiding your screen when someone walks by",
+      "Deleting all email older than a year"
+    ],
+    "correct_answer": 1,
+    "explanation": "Data minimization is a core privacy principle: the less unnecessary personal data you collect, store or share, the less can leak or be misused. (This project's own quiz practices it - no personal data is collected.)"
+  },
+  {
+    "question_id": "Q025",
+    "category": "Privacy",
+    "question": "Which action is a data-privacy risk?",
+    "options": [
+      "Using an approved, encrypted company collaboration platform",
+      "Emailing a customer spreadsheet to your personal webmail 'to work on at home'",
+      "Locking your screen when leaving your desk",
+      "Shredding printed documents you no longer need"
+    ],
+    "correct_answer": 1,
+    "explanation": "Moving personal/confidential data to unapproved personal systems removes it from organizational protections and controls - a leading cause of data-leak incidents. Use approved access paths."
+  },
+  {
+    "question_id": "Q026",
+    "category": "Privacy",
+    "question": "Is it safe to paste confidential company data into public AI chatbot tools?",
+    "options": [
+      "Yes, if the chatbot seems reputable",
+      "No - data entered into unapproved services may be stored, logged or used for training; use only organization-approved tools",
+      "Yes, as long as you delete the chat afterwards",
+      "Only if you remove employee names first"
+    ],
+    "correct_answer": 1,
+    "explanation": "Unapproved AI services may retain and reuse anything you submit. Treat confidential data like cash: it only goes where your organization's policies say it may go."
+  },
+  {
+    "question_id": "Q027",
+    "category": "Wi-Fi",
+    "question": "What is an 'evil twin' Wi-Fi hotspot?",
+    "options": [
+      "A router with two antennas",
+      "A rogue hotspot that mimics a legitimate network name to capture your traffic or credentials",
+      "A guest network provided by hotels",
+      "A hotspot that only appears twice a day"
+    ],
+    "correct_answer": 1,
+    "explanation": "Evil twins copy a legitimate SSID so your device auto-joins the attacker's network. Prevent it: disable auto-join for open networks, prefer your phone's hotspot or a VPN, and treat captive-portal password prompts as red flags."
+  },
+  {
+    "question_id": "Q028",
+    "category": "Wi-Fi",
+    "question": "You must work on a public cafe Wi-Fi. What is the best protection for your traffic?",
+    "options": [
+      "Sitting near the router",
+      "Connecting through your organization's VPN (or using your phone's hotspot instead)",
+      "Turning off your firewall to improve speed",
+      "Renaming your device to something anonymous"
+    ],
+    "correct_answer": 1,
+    "explanation": "A VPN encrypts your traffic end-to-end so others on the hostile network cannot read or manipulate it. Your personal hotspot avoids the untrusted network entirely - often the simplest safe option."
+  },
+  {
+    "question_id": "Q029",
+    "category": "Wi-Fi",
+    "question": "Which home router settings are safest?",
+    "options": [
+      "Default admin password, WPA2, latest firmware",
+      "Unique admin password, WPA2/WPA3 with a strong Wi-Fi password, up-to-date firmware",
+      "Hidden SSID with a weak password",
+      "WEP encryption for compatibility"
+    ],
+    "correct_answer": 1,
+    "explanation": "Change the default router admin credentials (they are printed on the box - attackers know them), use WPA2/WPA3 with a strong passphrase, and keep firmware updated so known router vulnerabilities are patched."
+  },
+  {
+    "question_id": "Q030",
+    "category": "Mobile Security",
+    "question":": A flashlight app requests access to your SMS messages and contacts. What should you do?",
+    "options": [
+      "Allow it - apps need permissions to work",
+      "Refuse/deny the permission and question the app - it wants far more than its function requires",
+      "Allow it but turn off mobile data",
+      "Pay for the ad-free version to remove permissions"
+    ],
+    "correct_answer": 1,
+    "explanation": "Permissions should match function. A flashlight needs no SMS access. Excessive permission requests are a hallmark of malicious or spyware apps - deny them and choose a reputable alternative."
+  },
+  {
+    "question_id": "Q031",
+    "category": "Mobile Security",
+    "question": "Your phone is lost or stolen. What gives you the best outcome?",
+    "options": [
+      "Hoping someone returns it",
+      "Having previously enabled remote-locate/remote-wipe (Find My / Find My Device), then wiping it and reporting to IT so accounts and tokens are revoked",
+      "Calling the manufacturer",
+      "Waiting 24 hours before acting"
+    ],
+    "correct_answer": 1,
+    "explanation": "Remote wipe only works if it was enabled BEFORE the loss. Wipe the device, report it (work accounts/tokens must be revoked), and change passwords for sensitive accounts as a precaution."
+  },
+  {
+    "question_id": "Q032",
+    "category": "Mobile Security",
+    "question": "Why is installing apps only from official app stores recommended?",
+    "options": [
+      "Official stores are always free",
+      "Official stores apply app review and malware scanning, reducing (not eliminating) malicious app risk; sideloaded files bypass those checks",
+      "Non-store apps drain battery",
+      "Official apps use less data"
+    ],
+    "correct_answer": 1,
+    "explanation": "Official stores add review and scanning layers that catch most malware before publication. Sideloaded APKs/IPAs and third-party stores bypass these checks entirely and are a leading mobile-malware source."
+  },
+  {
+    "question_id": "Q033",
+    "category": "Incident Reporting",
+    "question": "You realize you entered your password into a phishing page an hour ago. What is the correct sequence?",
+    "options": [
+      "Hope nothing happens; change the password next week",
+      "Report immediately, change the password now (starting with email), and check/enable MFA",
+      "Delete the email and clear your browser history",
+      "Reply to the phisher asking them to delete your data"
+    ],
+    "correct_answer": 1,
+    "explanation": "Speed decides outcomes: attackers test stolen credentials within minutes. Change the password immediately (email account first), verify MFA, and report so defenders can watch for misuse and block the campaign."
+  },
+  {
+    "question_id": "Q034",
+    "category": "Incident Reporting",
+    "question": "Why do security teams prefer false-alarm reports over unreported suspicions?",
+    "options": [
+      "False alarms create billable work",
+      "Early reporting shortens detection time; the cost of a false alarm is trivial compared to a late-reported real incident",
+      "They use reports to find careless employees",
+      "It is legally required to generate statistics"
+    ],
+    "correct_answer": 1,
+    "explanation": "Reporting culture is one of the strongest predictors of fast incident containment. A five-minute false alarm costs almost nothing; a three-day delay can turn a contained event into a breach."
+  },
+  {
+    "question_id": "Q035",
+    "category": "Incident Reporting",
+    "question": "After reporting a suspicious email, what should you do with it?",
+    "options": [
+      "Delete it immediately to prevent infection",
+      "Keep it (and any evidence like sender address/headers) unless your reporting process says otherwise, and follow instructions",
+      "Forward it to all colleagues as a warning",
+      "Reply asking the sender to stop"
+    ],
+    "correct_answer": 1,
+    "explanation": "Security teams often need the original message (especially headers) to block the campaign and investigate. Mass-forwarding can spread dangerous links; replying confirms your address is live."
+  },
+  {
+    "question_id": "Q036",
+    "category": "Incident Reporting",
+    "question": "Which best describes the incident-response lifecycle?",
+    "options": [
+      "Detect, deny, delete, defame",
+      "Preparation -> Detection/Identification -> Containment -> Eradication -> Recovery -> Lessons Learned",
+      "Backup, pay, restore, repeat",
+      "Log, ignore, escalate, forget"
+    ],
+    "correct_answer": 1,
+    "explanation": "The classic IR lifecycle: prepare before incidents, detect and identify them, contain the damage, eradicate the cause, recover operations, then capture lessons learned. Exact framework terminology varies by standard (e.g., NIST), but the phases are consistent."
+  }
+]
